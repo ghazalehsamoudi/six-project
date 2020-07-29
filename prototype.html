@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        function person(name, family) {
+            this.name = name;
+            this.family = family;
+        }
+        person.prototype.fullname=function () {
+                return this.name + '' + this.family;
+            };
+        var p1 = new person("sima", "bahrami");
+        var p2 = new person("bahar", "raminfar");
+        console.log(p1, p2);
+        console.log(p1.fullname==p2.fullname);
+    </script>
+</body>
+
+</html>

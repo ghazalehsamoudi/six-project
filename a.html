@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script>
+        $.ajax({
+            url: 'https://reqres.in/api/users?page=2',
+            success: function (response) {
+
+                console.log(response)
+                
+                var R = '<ul>';
+                    $.each(response.data,(index,element)=>{
+                        R += '<li>';
+                            R += '<img src="' + element.avatar +'"alt="avatar"/>';
+                            R += element.first_name + ' ' + element.last_name;
+                        R += '</li>'; 
+                    });
+                R += '</ul>'
+                $('#root').html(R)
+            }
+        })
+    </script>
+</body>
+
+</html>

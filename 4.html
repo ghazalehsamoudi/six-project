@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>head</h1>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+    <span>skfvsevsefvs</span>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        var $header = $('h1');
+
+        // $header.prepend('er')
+        // $header.append('<br> ksjrgse');
+        // //$header.after('<div class="box"></div>');
+        // $header.before('<div class="box"></div>');
+        // console.log($header.next());
+        // // $header.next().css('backgroundColor', 'pink');
+        // console.log($header.next().find('li'));
+        console.log($('body:has("h1")'));
+        console.log($('span:contains("vse")').length);
+        $('h1').attr('name', 'sina');
+
+    </script>
+</body>
+
+</html>

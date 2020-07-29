@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="box">
+
+    </h1>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script>
+        document.onkeydown = function (evt) {
+            evt = evt || window.event;
+            if (evt.keyCode == 27) {
+                alert('Esc key pressed.');
+            }
+        };
+    </script>
+</body>
+
+</html>

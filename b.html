@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="aj"></div>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script>
+
+        $.ajax({
+            url: 'https://reqres.in/api/unknown',
+            success: function (response) {
+                console.log(c);
+                var c = '<ul>';
+                $.each(response.data, (i, e) => {
+                    c += '<li>';
+                    c += e.id;
+                    c += '</li>';
+                    c += '<li>';
+                    c += e.name;
+                    c += '</li>';
+                    c += '<li>';
+                    c += e.year;
+                    c += '</li>';
+                    c += '<li>';
+                    c += e.color;
+                    c += '</li>';
+                    c += '<li>';
+                    c += e.pantone_value;
+                    c += '</li>';
+                    c += '<br>';
+                });
+                c += '<ul>';
+                $('.aj').html(c);
+            }
+        })
+    </script>
+</body>
+
+</html>

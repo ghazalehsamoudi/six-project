@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function creatObject() {
+            console.log('Inside', 'bar', this.foo);
+
+            return {
+                foo : 42,
+                bar: function () {
+                    console.log('Inside bar:', this.foo);
+                }
+            }
+        }
+        creatObject.bind({ foo: 21 })();
+
+        // function createObject() {
+        //     console.log('Inside createObject:', this.foo);
+
+        //     return {
+        //         foo: 42,
+        //         bar: () => console.log('Inside bar:', this.foo)
+        //     }
+        // }
+        // createObject.call({ foo: 21 }).bar();
+    </script>
+</body>
+
+</html>

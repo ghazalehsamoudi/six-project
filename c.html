@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="aj"></div>
+    <img src="" alt="">
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script>
+
+        $.ajax({
+            //url: 'https://reqres.in/api/users?page=2',
+            url: 'http://httpstat.us/400',
+            success: function (response) {
+                console.log(c);
+                var c = '<ul>';
+                $.each(response.data, (i, e) => {
+                    c += '<li>';
+                    c += e.id;
+                    c += '</li>';
+                    c += '<li>';
+                    c += ' <a href="mailto' + e.email + '">email:' + e.email + '</a>'
+                    c += '</li>';
+                    c += '<li>';
+                    c += e.first_name;
+                    c += '</li>';
+                    c += '<li>';
+                    c += e.last_name;
+                    c += '</li>';
+                    c += '<li>';
+                    c += '<img src="' + e.avatar + '" alt="fghgfh">';
+                    c += '</li>';
+                    c += '<br>';
+                });
+                c += '<ul>';
+                $('.aj').html(c);
+            },
+            error: function (error) {
+                console.log(status(500));
+            }
+        })
+    </script>
+</body>
+
+</html>
